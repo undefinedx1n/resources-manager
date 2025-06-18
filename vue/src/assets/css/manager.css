@@ -1,0 +1,342 @@
+.manager-container {
+    background-color: #F5F7FA;
+    min-height: 100vh;
+}
+
+.manager-header {
+    display: flex;
+    background-color: #5CB8E6;
+    height: 60px;
+    align-items: center;
+}
+
+.manager-header-left {
+    width: 280px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.manager-header-left img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.manager-header-left .title {
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.manager-header-center {
+    flex: 1;
+    width: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.manager-header-right {
+    width: auto;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.manager-header-right .avatar {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.manager-header-right .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.manager-main {
+    display: flex;
+}
+
+.manager-main-left {
+    width: 200px;
+    min-height: calc(100vh - 60px);
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.08);
+    transition: width 0.3s;
+}
+
+.manager-main-right {
+    flex: 1;
+    width: 0;
+    padding: 15px;
+    background-color: #F5F7FA;
+}
+
+.manager-main-right .search,
+.manager-main-right .operation,
+.manager-main-right .table {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.manager-main-right .search {
+    padding-bottom: 5px;
+}
+
+.manager-main-right .table .pagination {
+    margin-top: 15px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    margin-bottom: 15px;
+}
+
+/* ElementUI */
+.el-menu {
+    width: 100% !important;
+    border-right: none !important;
+    background-color: transparent;
+}
+
+.el-submenu__title,
+.el-menu-item {
+    color: #303133;
+    height: 50px;
+    line-height: 50px;
+    background-color: transparent !important;
+}
+
+.el-menu-item.is-active {
+    background-color: #E4F3FF !important;
+    color: #5CB8E6 !important;
+    border-right: 3px solid #5CB8E6;
+}
+
+.el-menu-item.is-active i,
+.el-submenu.is-active .el-submenu__title i {
+    color: #5CB8E6 !important;
+}
+
+.el-submenu__title:hover,
+.el-menu-item:hover {
+    background-color: #ECF5FF !important;
+    color: #5CB8E6 !important;
+}
+
+.el-menu-item:hover i {
+    color: #5CB8E6 !important;
+}
+
+.el-menu--inline .el-menu-item {
+    padding-left: 45px !important;
+}
+
+.el-breadcrumb__inner,
+.el-breadcrumb__separator {
+    color: #FFFFFF !important;
+}
+
+.el-breadcrumb {
+    margin-left: 10px;
+}
+
+.el-dropdown-menu {
+    margin-top: 5px !important;
+}
+
+th.el-table__cell {
+    background-color: #F5F7FA !important;
+    color: #606266;
+    font-weight: 500;
+}
+
+/* 调整默认按钮样式 (可选，如果想全局统一) */
+.el-button--primary {
+    background-color: #5CB8E6;
+    border-color: #5CB8E6;
+}
+
+.el-button--primary:hover {
+    background-color: #4AA8D8;
+    border-color: #4AA8D8;
+}
+
+.el-button--warning {
+    background-color: #F2C379;
+    border-color: #F2C379;
+}
+
+.el-button--warning:hover {
+    background-color: #e6a23c;
+    border-color: #e6a23c;
+}
+
+.el-button--success {
+    background-color: #82C97B;
+    border-color: #82C97B;
+}
+
+.el-button--success:hover {
+    background-color: #67c23a;
+    border-color: #67c23a;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .manager-header-left {
+        width: auto; /* Allow shrinking */
+        padding-left: 0; /* Adjusted for hamburger */
+        /* Ensure hamburger and logo are properly aligned if title is hidden */
+        display: flex; /* Added for alignment */
+        align-items: center; /* Added for alignment */
+    }
+
+    /* Targeting the hamburger menu specifically within its context */
+    .manager-header-left > .hamburger-menu { /* Increased specificity and ensure it's direct child if that's the case */
+        display: block !important; /* Show hamburger menu and ensure it overrides other display properties */
+        font-size: 24px; /* Ensure font-size is applied, can be moved from Manager.vue scoped style */
+        color: #FFFFFF; /* Ensure visibility against dark header */
+        padding: 0 10px; /* Adjusted padding */
+        cursor: pointer;
+        order: -1; /* Place hamburger before the logo if it's inside manager-header-left after logo */
+        margin-right: 10px; /* Space between hamburger and logo */
+    }
+
+    .manager-header-left .title {
+        display: none !important; /* Hide title on small screens to save space, logo is enough */
+    }
+
+    .manager-header-center {
+        display: none; /* Hide breadcrumbs on small screens */
+    }
+
+    .manager-main {
+        flex-direction: column;
+    }
+
+    .manager-main-left {
+        /* width: 100%; */ /* This will be overridden by fixed width below for slide-in menu */
+        min-height: auto; /* Adjust height for stacked layout */
+        box-shadow: none; /* Optional: remove shadow when stacked */
+
+        /* New styles for mobile slide-in menu */
+        position: fixed;
+        left: 0;
+        top: 60px; /* Start below the header (assuming header height is 60px and scrolls with page) */
+        height: calc(100vh - 60px); /* Occupy remaining viewport height */
+        /* bottom: 0; */ /* Replaced by top + height */
+        width: 250px; /* Or your preferred width, e.g., 80vw */
+        background-color: #FFFFFF; /* Ensure it has a background */
+        z-index: 1000; /* Make sure it's above other content */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto; /* Allow scrolling if menu is long */
+        /* padding-top: 60px; */ /* Removed as top is now 60px */
+    }
+
+    .manager-main-left.mobile-menu-active {
+        transform: translateX(0);
+        box-shadow: 2px 0 8px rgba(0,0,0,0.15); /* Add shadow when active */
+    }
+
+    .manager-main-right {
+        width: 100%;
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .manager-main-right .search,
+    .manager-main-right .operation,
+    .manager-main-right .table {
+        padding: 10px;
+    }
+
+    /* Styles for the page overlay */
+    .page-overlay {
+        position: fixed;
+        top: 60px; /* Align with the start of the sidebar */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px); /* Cover the same area as sidebar potentially could */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999; /* Below sidebar (1000) but above main content */
+        /* display is controlled by v-if in Vue component */
+    }
+
+    /* manager-main-right内の要素の調整はここより下で行うことが多い */
+    .manager-main-right .search .el-input,
+    .manager-main-right .search .el-select {
+        width: calc(100% - 90px) !important; /* 按钮宽度约80px + margin 10px */
+        margin-bottom: 10px;
+    }
+    .manager-main-right .search .el-button {
+        width: 80px !important;
+        margin-left: 10px !important;
+    }
+    .manager-main-right .search div[style*="float: right"] .el-button,
+    .manager-main-right .operation .el-button {
+        width: calc(50% - 5px) !important; /* 两个按钮并排 */
+        margin: 0 0 10px 0 !important;
+    }
+    .manager-main-right .search div[style*="float: right"] .el-button:nth-child(odd),
+    .manager-main-right .operation .el-button:nth-child(odd) {
+        margin-right: 10px !important;
+    }
+    .manager-main-right .search div[style*="float: right"] .el-button:last-child:nth-child(even),
+    .manager-main-right .operation .el-button:last-child:nth-child(even) {
+        margin-left: 0 !important; /* If only one button remains, it takes full calculated width */
+    }
+
+    /* 针对 .card 内的 el-form 的响应式调整 */
+    .card .el-form-item__label {
+        width: 100% !important;
+        text-align: left !important;
+        line-height: normal;
+        padding-bottom: 5px;
+    }
+    .card .el-form-item__content {
+        margin-left: 0 !important;
+        display: block;
+        width: 100%;
+    }
+    .card .el-form-item .el-input,
+    .card .el-form-item .el-select,
+    .card .el-form-item .el-textarea,
+    .card .el-form-item .el-input-number,
+    .card .el-form-item .el-date-editor,
+    .card .el-form-item .el-cascader {
+        width: 100% !important;
+    }
+
+    /* 弹窗内表单元素宽度调整 */
+    .el-dialog .el-form-item .el-input,
+    .el-dialog .el-form-item .el-select,
+    .el-dialog .el-form-item .el-date-editor,
+    .el-dialog .el-form-item .el-textarea {
+      width: 100% !important;
+    }
+
+     /* 表格内操作按钮的堆叠 */
+    .el-table .el-button--mini {
+        display: block;
+        width: calc(100% - 10px); /* 微调宽度以适应可能的内边距 */
+        margin: 5px auto !important; /* 上下边距5px，左右自动居中，覆盖默认的左右margin */
+    }
+    .el-table .el-button--mini + .el-button--mini {
+        margin-top: 5px !important; /* 确保堆叠按钮间有顶部间距 */
+        margin-left: auto !important; /* 重置可能存在的左边距 */
+    }
+}

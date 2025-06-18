@@ -1,0 +1,122 @@
+.front-notice {
+    padding: 5px 20px;
+    color: #666;
+    font-size: 12px
+}
+.front-header {
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+.front-header-left {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.front-header-left img, .front-header-dropdown img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
+}
+.front-header-left .title {
+    flex: 1;
+    color: #355476;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.front-header-center {
+    flex: 1;
+}
+.front-header-right {
+    width: 200px;
+    padding-right: 20px;
+    text-align: right;
+}
+.front-header-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.el-dropdown-menu {
+    width: 100px !important;
+    text-align: center !important;
+}
+
+/*页面具体样式自定义*/
+.main-content {
+    width: 100%;
+    margin: 5px auto;
+}
+/* ElementUI 样式覆盖 */
+.el-menu.el-menu--horizontal {
+    border: none !important;
+    height: 59px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .front-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .front-header-left {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        justify-content: center; /* Center logo and title if title is kept */
+        margin-bottom: 10px;
+    }
+
+    .front-header-left .title {
+        font-size: 18px; /* Slightly reduce title font size */
+        /* Consider hiding title if space is very limited: display: none; */
+    }
+
+    .front-header-center {
+        width: 100%;
+        order: 3; /* Move nav below login/user info */
+    }
+
+    .front-header-nav .el-menu--horizontal > .el-menu-item {
+        float: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0 !important; /* Increased vertical padding, removed horizontal */
+        /* Ensure text color is easily readable, e.g., color: #333; if needed */
+        /* Element UI default active/hover styles should still apply */
+    }
+    .front-header-nav .el-menu.el-menu--horizontal{
+        display: flex;
+        flex-direction: column;
+        height: auto !important; /* Ensure menu height adjusts to content */
+        margin-top: 10px; /* Add space above the nav menu */
+        border-top: 1px solid #f0f0f0; /* Separator line */
+        border-bottom: 1px solid #f0f0f0; /* Separator line */
+    }
+
+    .front-header-right {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center; /* Center login buttons/user info */
+        order: 2;
+        margin-bottom: 10px;
+    }
+
+    .front-notice {
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+    .main-body {
+      padding: 0 10px; /* Add some padding to main content on small screens */
+    }
+}
